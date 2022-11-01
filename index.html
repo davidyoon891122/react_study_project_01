@@ -3,12 +3,11 @@
     <body>
         <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <div id="root"></div>
-        <script>
+        <script type="text/babel">
             const rootElement = document.getElementById("root")
-            const element = React.createElement("h1", {
-                className: "title"
-            }, ["Hello, World!", "It's me!", "Good"])
+            const element = <h1 className="title">Hello World!</h1>
             ReactDOM.render(element, rootElement)
         </script>
 
