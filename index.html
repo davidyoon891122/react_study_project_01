@@ -7,17 +7,17 @@
         <div id="root"></div>
         <script type="text/babel">
             const rootElement = document.getElementById("root")
-            const paint = () => (
+            const paint = (title, description) => (
                 <>
-                    <h1>Hi</h1>
-                    <h3>Bye</h3>
+                    <h1>{title}</h1>
+                    <h3>{description}</h3>
                 </>
             )
             const element = (
                 <>
-                {paint()}
-                {paint()}
-                {paint()}
+                {paint("Good", "good")}
+                {paint("Bad", "bad")}
+                {paint("Soso", "soso")}
                 </>
             )
 
