@@ -14,16 +14,19 @@
                 </>
             )
 
-            const Paint = ({title, description}) => (
+            const Paint = ({title, description, children}) => (
                 <>
                     <h1>{title}</h1>
                     <h3>{description}</h3>
+                    {children}
                 </>
             )
 
             const element = (
                 <>
-                <Paint title="NewTitle" description="newtitle"/>
+                <Paint title="NewTitle" description="newtitle">
+                    <h1>Hi</h1>
+                </Paint>
                 <Paint title="NewTitle2" description="newtitle2"/>
                 <Paint title="NewTitle3" description="newtitle3"/>
                 {paint("Good", "good")}
