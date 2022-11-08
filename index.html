@@ -28,10 +28,17 @@
                 }
             }
 
+            function Number({number}) {
+                return number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>
+            }
+
             const element = (
                 <>
                 <Text text="Text"/>
                 <Text text="text"/>
+                <Number number={1} />
+                <Number number={2} />
+                <Number number={3} />
                 </>
             )
 
