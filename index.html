@@ -14,19 +14,24 @@
                 </>
             )
 
-            const Paint = ({title, description, children}) => (
-                <>
-                    <h1>{title}</h1>
-                    <h3>{description}</h3>
-                    {children}
-                </>
-            )
+            const Text = ({text}) => {
+                // text 가 대문자로 시작하면 h1 태그 리턴, 소문자로 시작하면 h3 태그 리턴
+                if(text.charAt(0) === text.charAt(0).toUpperCase()) {
+                    return (
+                        <h1>
+                            {text}
+                        </h1>
+                    )
+                    
+                } else {
+                    return <h3>{text}</h3>
+                }
+            }
 
             const element = (
                 <>
-                <Paint title="NewTitle" description="newtitle">
-                    {Paint({title: "Bad", description: "bad", children: "Hi"})}
-                </Paint>
+                <Text text="Text"/>
+                <Text text="text"/>
                 </>
             )
 
