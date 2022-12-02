@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body id="body">
+        <div id="root"></div>
+        <script type="text/babel">
+            const rootElement = document.getElementById("root")
+
+            const App = () => {
+                console.log("APP render start")
+                const [show, setShow] = React.useState(() => {
+                    console.log("App useState")
+                    return false
+                })
+
+                function handleClick() {
+                    setShow((prev) => !prev)
+                }
+
+                React.useEffect(() => {
+                    console.log("useEffect []")
+                }, [])
+
+                React.useEffect(() => {
+                    console.log("useEffect")
+                })
+
+                React.useEffect(() => {
+                    console.log("useEffect [show]")
+                }, [show])
+
+                return (
+                <>
+                    <button onClick={handleClick}>Search</button>
+                    {
+                        show ? 
+                        <>
+                            <input />
+                            <p></p>
+                        </> 
+                        : 
+                        null 
+                    }
+                </>
+                )
+            }
+            ReactDOM.render(<App />, rootElement)
+            console.log("APP render end")
+        </script>
+    </body>
+</html>
